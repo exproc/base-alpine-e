@@ -7,6 +7,7 @@ ENV TZ=America/New_York
 RUN cp /usr/share/zoneinfo/America/New_York /etc/localtime 
 RUN ls -la /etc/ 
 RUN ln -sf /dev/stdout /var/log/nginx/access.log \ && ln -sf /dev/stderr /var/log/nginx/error.log
+RUN mkdir -pv /var/www/html
 COPY  src/etc/supervisor/  /etc/
 RUN ls -la /etc/supervisor.d/
 EXPOSE 80 443 69/udp 
